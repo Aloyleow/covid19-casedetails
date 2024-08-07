@@ -1,40 +1,37 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import { getData } from './Services/covidData'
 
-async function getData() {
-  const url = "https://data.gov.sg/api/action/datastore_search?resource_id=d_554627df56037a1296507f35c374f79d";
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
 
-    const json = await response.json();
-    const result = [json.result.records];
-    return result;
-  } catch (error) {
-    console.error(error.message);
-  }
-}
 
 function App() {
-  getData()
-  // const [covidData, setCovidData] = useState([])
-
-  // useEffect(() => {
-  //   const loadCovidData = async () => {
-  //     const data = await getData();
-  //     setCovidData(data);
-
-  //   };
-  //   loadCovidData();
-  // }, [])
   
+  const [covidData, setCovidData] = useState([])
+
+  useEffect(() => {
+    const loadCovidData = async () => {
+      const data = await getData();
+      setCovidData(data);
+
+    };
+    loadCovidData();
+  }, [])
   
+  // const array = () => {
+  //   for(let i = 0; i < covidData.length; i ++){
+  //     console.log(covidData[i][2])
+  //     }
+    
+  // }
+
+  // array()
 
   return (
     <>
-      <h4></h4>
+      <h1>Hello Human</h1>
+      <ul>
+        {/* {covidData[0].map((event, index) => (<li key={index}>{event.gender}</li>))} */}
+      </ul>
       
     </>
   )
