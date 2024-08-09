@@ -8,7 +8,7 @@ export async function getData() {
   
       const json = await response.json();
       const result = [json.result.records];
-      return result;
+      return result[0];
     } catch (error) {
       console.error(error.message);
     }

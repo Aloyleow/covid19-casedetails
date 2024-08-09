@@ -1,38 +1,23 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { getData } from './Services/covidData'
-
+import { Route, Routes } from 'react-router-dom'
+import ListPage from './Pages/ListPage'
+import HomePage from './Pages/HomePage'
 
 
 function App() {
+  const [name, setName] = useState("")
   
-  const [covidData, setCovidData] = useState([])
-
-  useEffect(() => {
-    const loadCovidData = async () => {
-      const data = await getData();
-      setCovidData(data);
-
-    };
-    loadCovidData();
-  }, [])
   
-  // const array = () => {
-  //   for(let i = 0; i < covidData.length; i ++){
-  //     console.log(covidData[i][2])
-  //     }
-    
-  // }
-
-  // array()
-
+  
   return (
     <>
       <h1>Hello Human</h1>
-      <ul>
-        {/* {covidData[0].map((event, index) => (<li key={index}>{event.gender}</li>))} */}
-      </ul>
-      
+      <Routes>
+        <Route path = "/" element = {<HomePage name = {name} setName = {setName}/>}/>
+        <Route path = "/list" element = {<ListPage name = {name}/>}/>
+      </Routes>      
+        {/* {covidData.map((event, index) => (<li key={index}>{event.gender}</li>))} */}     
     </>
   )
 }
