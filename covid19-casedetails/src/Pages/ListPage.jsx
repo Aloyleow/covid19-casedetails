@@ -16,16 +16,16 @@ export default function ListPage({name}){
 
     const nameEmpty = () => {
         if (name === ""){
-            return "human"
+            return "Human"
         } else {
             return name
-        }
+        }   
     }
 
 
     return (<>
 
-        <h2>Welcome {nameEmpty}</h2>
+        <h2>Welcome {nameEmpty()}</h2>
         <table>
             <caption>
                 <h1>List of Covid-19 Case Details</h1>
