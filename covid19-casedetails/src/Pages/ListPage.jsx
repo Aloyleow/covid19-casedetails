@@ -1,18 +1,6 @@
-import { getData } from "../Services/covidData";
-import { useEffect } from "react";
-import { useState } from "react";
 
-export default function ListPage({name}){
-    const [covidData, setCovidData] = useState([])
-
-    useEffect(() => {
-        const loadCovidData = async () => {
-            const data = await getData();
-            setCovidData(data);
-
-        };
-        loadCovidData();
-    }, [])
+export default function ListPage({name, covidData}){
+    
 
     const nameEmpty = () => {
         if (name === ""){
