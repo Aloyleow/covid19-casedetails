@@ -1,25 +1,17 @@
 import { useNavigate } from "react-router-dom"
 
-export default function ListPage({name, covidData}){
+export default function ListPage({nameEmpty, covidData}){
 
     const navigate = useNavigate()
 
     const handleOnClick = (_id) => {
         navigate(`/list/${_id}`)
-        console.log(_id)
     }
     
-    const nameEmpty = () => {
-        if (name === ""){
-            return "Human"
-        } else {
-            return name
-        }   
-    }
 
     return (<>
 
-        <h2>Welcome {nameEmpty()}</h2>
+        <h2>Welcome {nameEmpty}</h2>
         <table>
             <caption>
                 <h1>List of Covid-19 Case Details</h1>

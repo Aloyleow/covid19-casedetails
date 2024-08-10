@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom"
-import { useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Link} from "react-router-dom"
+
+
 
 
 export default function CaseDetailsPage({covidData}){
@@ -51,8 +52,8 @@ export default function CaseDetailsPage({covidData}){
             <dd>{patientDetails?.residing_location}</dd>
             <dd>{patientDetails?.residing_postal_code}</dd>
             <br></br>
-            <dt>Reference URL</dt>
-            <dd>{patientDetails?.reference_url}.</dd>
+            <dt><Link to = {patientDetails?.reference_url} target = "_blank">Reference URL</Link></dt>
+            <dd></dd>
 
         </dl>
         <button onClick={handleBackToList}>Back to List</button>

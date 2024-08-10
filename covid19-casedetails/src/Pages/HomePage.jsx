@@ -7,14 +7,14 @@ export default function HomePage({name, setName}){
     const handleChange = (event) => {setName(event.target.value)}
     const handleSubmit = (event) => {
         event.preventDefault()
-        navigate("/list")
+        navigate("/main")
     }
 
 
 
     return (<>
         
-        <h1>Home</h1>
+        
         <form onSubmit = {handleSubmit}>
            <label htmlFor = "username">What is your name human ?</label>
            <input

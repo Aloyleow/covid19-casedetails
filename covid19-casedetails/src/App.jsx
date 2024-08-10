@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import ListPage from './Pages/ListPage'
 import HomePage from './Pages/HomePage'
+import MainPage from './Pages/MainPage'
 import CaseDetailsPage from './Pages/CaseDetailsPage'
+import DataAnalysisPage from './Pages/DataAnalysisPage'
 import { getData } from './Services/covidData'
 
 
@@ -20,6 +22,14 @@ function App() {
         };
         loadCovidData();
     }, [])
+
+    const nameEmpty = () => {
+      if (name === ""){
+          return "Human"
+      } else {
+          return name
+      }   
+  }
   
   
   
@@ -27,7 +37,9 @@ function App() {
     <>
       <Routes>
         <Route path = "/" element = {<HomePage name = {name} setName = {setName}/>}/>
-        <Route path = "/list" element = {<ListPage covidData = {covidData} name = {name} />}/>
+        <Route path = "/main" element = {<MainPage nameEmpty = {nameEmpty()}/>} />
+        <Route path = "/dataanalysis" element = {<DataAnalysisPage/>} />
+        <Route path = "/list" element = {<ListPage covidData = {covidData} nameEmpty = {nameEmpty()} />}/>
         <Route path = "/list/:_id" element = {<CaseDetailsPage covidData = {covidData}/>}/>
       </Routes>        
     </>
