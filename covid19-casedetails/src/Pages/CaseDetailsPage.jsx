@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 export default function CaseDetailsPage({covidData}){
-
+    const navigate = useNavigate()
     const { _id } = useParams()
+    
     const patientDetails = covidData.find((patient) => patient._id === Number(_id))
-    console.log(patientDetails)
+    
+    const handleBackToList = () => {navigate("/list")}
+
+    if(!patientDetails) return <><h1>No matching ID</h1><button onClick={handleBackToList}>Back to List</button></>
     
     return (<>
 
@@ -50,7 +55,7 @@ export default function CaseDetailsPage({covidData}){
             <dd>{patientDetails?.reference_url}.</dd>
 
         </dl>
-
+        <button onClick={handleBackToList}>Back to List</button>
     
     </>)
 }

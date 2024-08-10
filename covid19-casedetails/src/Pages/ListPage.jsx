@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router-dom"
 
 export default function ListPage({name, covidData}){
-    
 
+    const navigate = useNavigate()
+
+    const handleOnClick = (_id) => {
+        navigate(`/list/${_id}`)
+        console.log(_id)
+    }
+    
     const nameEmpty = () => {
         if (name === ""){
             return "Human"
@@ -9,7 +16,6 @@ export default function ListPage({name, covidData}){
             return name
         }   
     }
-
 
     return (<>
 
@@ -29,8 +35,8 @@ export default function ListPage({name, covidData}){
                 </tr>
             </thead>
             <tbody>
-                {covidData.map((patient) => (
-                    <tr key={patient.case_id}>
+                {covidData.map((patient) => (               
+                    <tr key={patient.case_id} onClick = {() => handleOnClick(patient._id)}>
                         <th scope="row">{patient.case_id}</th>
                         <td>{patient.age}</td>
                         <td>{patient.nationality}</td>
