@@ -38,7 +38,7 @@ function App() {
       <Routes>
         <Route path = "/" element = {<HomePage name = {name} setName = {setName}/>}/>
         <Route path = "/main" element = {<MainPage nameEmpty = {nameEmpty()}/>} />
-        <Route path = "/dataanalysis" element = {<DataAnalysisPage/>} />
+        <Route path = "/dataanalysis" element = {<DataAnalysisPage covidData = {covidData}/>} />
         <Route path = "/list" element = {<ListPage covidData = {covidData} nameEmpty = {nameEmpty()} />}/>
         <Route path = "/list/:_id" element = {<CaseDetailsPage covidData = {covidData}/>}/>
       </Routes>        
