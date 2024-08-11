@@ -7,22 +7,23 @@ export default function HealthCareInstituteCount({covidData}){
 
     useEffect(() => {
 
-        const arrayHospital = covidData.map((hospital) => {
-            return hospital.public_healthcare_institution
+        const arrayHospital = covidData.map((patient) => {
+            return patient.public_healthcare_institution
         })
 
         
-        const hospitalCount = arrayHospital.reduce((acc, hospital) => {
-            if (acc[hospital]) {
-                acc[hospital] = acc[hospital] + 1;
+        const hospitalCount = arrayHospital.reduce((acc, patient) => {
+            if (acc[patient]) {
+                acc[patient] = acc[patient] + 1;
             } else {
-                acc[hospital] = 1;
+                acc[patient] = 1;
             }
             return acc;
            
        
         }, {})
         console.log(hospitalCount)
+        //stuck on how to auto map name and value.
         setHospitals([
             {name: "Alexandra Hospital",  value: 1},
             {name: "CGH",  value: 2},

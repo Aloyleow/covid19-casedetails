@@ -1,7 +1,9 @@
+// import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-export default function ListPage({nameEmpty, covidData}){
-
+export default function ListPage({ covidData}){
+    
+    
     const navigate = useNavigate()
 
     const handleOnClick = (_id) => {
@@ -11,8 +13,8 @@ export default function ListPage({nameEmpty, covidData}){
 
     return (<>
 
-        <h2>Welcome {nameEmpty}</h2>
-        <table>
+       
+        <table className="sortable">
             <caption>
                 <h1>List of Covid-19 Case Details</h1>
             </caption>
