@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import './HomePage.css'
 
 export default function HomePage({name, setName}){
 
@@ -14,9 +15,9 @@ export default function HomePage({name, setName}){
 
     return (<>
         
-        
-        <form onSubmit = {handleSubmit}>
-           <label htmlFor = "username">What is your name human ?</label>
+       
+        <form className = "homePageForm" onSubmit = {handleSubmit}>
+           <label htmlFor = "username">Welcome to the Covid-19 Database, please enter your name</label>
            <input
            id = "username"
            name = "username"
