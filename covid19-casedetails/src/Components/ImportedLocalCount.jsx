@@ -17,7 +17,7 @@ export default function ImportedLocalCount({covidData}){
             }
         }
         setImportedLocal([{name: "Imported", value: x}, {name: "Local", value: y}])
-        console.log(x, y)
+        
 
     }, [covidData])
 
