@@ -46,6 +46,7 @@ export default function CaseTrackerPage(){
                         <td>{patient.imported_local}</td>
                         <td>{patient.public_healthcare_institution}</td>
                         <td>{patient.residing_location}</td>
+                        <td><button>Remove</button></td>
                     </tr>
                 ))}
             </tbody>
