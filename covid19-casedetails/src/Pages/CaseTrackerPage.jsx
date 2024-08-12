@@ -18,7 +18,28 @@ export default function CaseTrackerPage(){
 
     }, [])
 
-    console.log(trackedCase)
+    const handleDelete = async (caseId) => {
+        const url = `https://api.airtable.com/v0/appl07cKSlVT5aGI4/Table%201?records[]=${caseId}`;
+        console.log(caseId)
+        try {
+            const response = await fetch(url, {
+                method: "DELETE",
+                headers:{
+                    "Content-Type": "application/json",
+                    Authorization:
+                        "Bearer pat2UuA0NYZBqUWxm.563541c4ccdb50f1705cae0506558cd625ff60f690a37fafadcdd1a317800b24"
+                }
+            });
+            if(!response.ok){
+                throw new Error(`Response status: ${response.status}`);
+            }
+            // const json = await response.json();
+            
+            setTrackedCase(trackedCase.filter((profile) => profile.id !== caseId))
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
  
     
     return (<>
@@ -39,14 +60,14 @@ export default function CaseTrackerPage(){
             </thead>
             <tbody>
                 {trackedCase.map((patient) => (
-                    <tr key={patient.case_id}>
+                    <tr key={patient.id}>
                         <th scope="row">{patient.case_id}</th>
                         <td>{patient.age}</td>
                         <td>{patient.nationality}</td>
                         <td>{patient.imported_local}</td>
                         <td>{patient.public_healthcare_institution}</td>
                         <td>{patient.residing_location}</td>
-                        <td><button>Remove</button></td>
+                        <td><button onClick={() => handleDelete(patient.id)}>Remove</button></td>
                     </tr>
                 ))}
             </tbody>

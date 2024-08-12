@@ -21,6 +21,7 @@ export default function CaseDetailsPage({covidData}){
         event.preventDefault();
         await createData(saveCases);
       }
+
       
     if(!patientDetails) return <><h1>No matching ID</h1><button onClick={handleBackToList}>Back to List</button></>
     
