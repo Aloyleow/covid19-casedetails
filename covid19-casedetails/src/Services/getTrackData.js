@@ -5,7 +5,7 @@ export async function getTrackData() {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer pat2UuA0NYZBqUWxm.563541c4ccdb50f1705cae0506558cd625ff60f690a37fafadcdd1a317800b24",
+            "Bearer ",
         },
       });
       if (!response.ok) {
