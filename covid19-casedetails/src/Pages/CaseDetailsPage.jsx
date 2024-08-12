@@ -1,16 +1,27 @@
 import { useParams, useNavigate, Link} from "react-router-dom"
-
-
-
+import { createData } from "../Services/createData";
 
 export default function CaseDetailsPage({covidData}){
     const navigate = useNavigate()
     const { _id } = useParams()
-    
     const patientDetails = covidData.find((patient) => patient._id === Number(_id))
     
+    const saveCases = {
+        case_id: patientDetails?.case_id,
+        age: patientDetails?.age,
+        nationality: patientDetails?.nationality,
+        imported_local: patientDetails?.imported_local,
+        public_healthcare_institution: patientDetails?.public_healthcare_institution,
+        residing_location: patientDetails?.residing_location
+    }
+    
     const handleBackToList = () => {navigate("/list")}
-
+    
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        await createData(saveCases);
+      }
+      
     if(!patientDetails) return <><h1>No matching ID</h1><button onClick={handleBackToList}>Back to List</button></>
     
     return (<>
@@ -57,6 +68,7 @@ export default function CaseDetailsPage({covidData}){
 
         </dl>
         <button onClick={handleBackToList}>Back to List</button>
+        <button onClick={handleSubmit}>Save to tracker</button>
     
     </>)
 }

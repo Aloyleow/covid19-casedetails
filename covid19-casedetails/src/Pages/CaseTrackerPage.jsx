@@ -1,22 +1,31 @@
-// import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { getTrackData } from "../Services/getTrackData"
+import { useEffect, useState } from "react"
 
-export default function ListPage({ covidData }){
-    
-    
-    const navigate = useNavigate()
+export default function CaseTrackerPage(){
 
-    const handleOnClick = (_id) => {
-        navigate(`/list/${_id}`)
-    }
-    
+    const [trackedCase, setTrackedCase] = useState([])
 
+    useEffect(() => {
+
+        const loadCase = async () => {
+            const data = await getTrackData()
+            setTrackedCase(data)
+            console.log(data)
+        }
+
+
+        loadCase()
+
+    }, [])
+
+    console.log(trackedCase)
+ 
+    
     return (<>
 
-       
-        <table className="sortable">
+        <table>
             <caption>
-                <h1>List of Covid-19 Case Details</h1>
+                <h1>Tracked Covid-19 Case Details</h1>
             </caption>
             <thead>
                 <tr>
@@ -29,8 +38,8 @@ export default function ListPage({ covidData }){
                 </tr>
             </thead>
             <tbody>
-                {covidData.map((patient) => (               
-                    <tr key={patient.case_id} onClick = {() => handleOnClick(patient._id)}>
+                {trackedCase.map((patient) => (
+                    <tr key={patient.case_id}>
                         <th scope="row">{patient.case_id}</th>
                         <td>{patient.age}</td>
                         <td>{patient.nationality}</td>
@@ -43,6 +52,7 @@ export default function ListPage({ covidData }){
             <tfoot>
             </tfoot>
         </table>
-   
+    
+    
     </>)
 }

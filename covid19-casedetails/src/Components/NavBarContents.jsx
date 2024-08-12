@@ -19,6 +19,8 @@ export default function NavBarContents({name}){
        <NavLink to = "/list">List</NavLink>
        <br></br>
        <NavLink to = "/dataanalysis">Data Analysis</NavLink>
+       <br></br>
+       <NavLink to = "/casetracker">Case Tracker</NavLink>
     
     
     </>)
