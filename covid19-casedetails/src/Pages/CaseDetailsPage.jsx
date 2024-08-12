@@ -5,7 +5,7 @@ export default function CaseDetailsPage({covidData}){
     const navigate = useNavigate()
     const { _id } = useParams()
     const patientDetails = covidData.find((patient) => patient._id === Number(_id))
-    
+
     const saveCases = {
         case_id: patientDetails?._id,
         age: patientDetails?.age,
@@ -20,9 +20,9 @@ export default function CaseDetailsPage({covidData}){
     const handleSubmit = async (event) => {
         event.preventDefault();
         await createData(saveCases);
-      }
-
-      
+          
+    }
+    
     if(!patientDetails) return <><h1>No matching ID</h1><button onClick={handleBackToList}>Back to List</button></>
     
     return (<>
@@ -51,10 +51,10 @@ export default function CaseDetailsPage({covidData}){
             <dt>Status</dt>
             <dd>{patientDetails?.status}</dd>
             <br></br>
-            <dt>Confirmation Date</dt>
+            <dt>Confirmation Date (m/dd/yyyy)</dt>
             <dd>{patientDetails?.date_of_confirmation}</dd>
             <br></br>
-            <dt>Discharge Date</dt>
+            <dt>Discharge Date (m/dd/yyyy)</dt>
             <dd>{patientDetails?.date_of_discharge}</dd>
             <br></br>
             <dt>Place Visited</dt>
