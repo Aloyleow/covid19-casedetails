@@ -7,7 +7,7 @@ export default function ListPage({ covidData }){
     const navigate = useNavigate()
 
     const handleOnClick = (_id) => {
-        navigate(`/list/${_id}`)
+        navigate(`/casedetails/${_id}`)
     }
     
 

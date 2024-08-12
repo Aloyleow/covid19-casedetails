@@ -9,6 +9,7 @@ import DataAnalysisPage from './Pages/DataAnalysisPage'
 import { getData } from './Services/covidData'
 import NavBarContents from './Components/NavBarContents'
 import CaseTrackerPage from './Pages/CaseTrackerPage'
+import CaseDetailsPageTracker from './Pages/CaseDetailsPageTracker'
 
 
 function App() {
@@ -37,8 +38,9 @@ function App() {
         <Route path = "/main" element = {<MainPage/>} />
         <Route path = "/dataanalysis" element = {<DataAnalysisPage covidData = {covidData}/>} />
         <Route path = "/list" element = {<ListPage covidData = {covidData}/>}/>
-        <Route path = "/list/:_id" element = {<CaseDetailsPage covidData = {covidData}/>}/>
+        <Route path = "/casedetails/:_id" element = {<CaseDetailsPage covidData = {covidData}/>}/>
         <Route path = "/casetracker" element = {<CaseTrackerPage/>}/>
+        <Route path = "/casetracker/casedetails/:_id" element = {<CaseDetailsPageTracker covidData = {covidData}/>}/>
       </Routes>        
     </>
   )

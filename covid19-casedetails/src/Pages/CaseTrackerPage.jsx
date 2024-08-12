@@ -1,5 +1,6 @@
 import { getTrackData } from "../Services/getTrackData"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function CaseTrackerPage(){
 
@@ -10,7 +11,6 @@ export default function CaseTrackerPage(){
         const loadCase = async () => {
             const data = await getTrackData()
             setTrackedCase(data)
-            console.log(data)
         }
 
 
@@ -20,7 +20,6 @@ export default function CaseTrackerPage(){
 
     const handleDelete = async (caseId) => {
         const url = `https://api.airtable.com/v0/appl07cKSlVT5aGI4/Table%201?records[]=${caseId}`;
-        console.log(caseId)
         try {
             const response = await fetch(url, {
                 method: "DELETE",
@@ -40,8 +39,13 @@ export default function CaseTrackerPage(){
             console.error(error.message);
         }
     }
+
+    const navigate = useNavigate()
+
+    const handleOnClick = (_id) => {
+        navigate(`/casetracker/casedetails/${_id}`)
+    }
  
-    
     return (<>
 
         <table>
@@ -61,12 +65,12 @@ export default function CaseTrackerPage(){
             <tbody>
                 {trackedCase.map((patient) => (
                     <tr key={patient.id}>
-                        <th scope="row">{patient.case_id}</th>
-                        <td>{patient.age}</td>
-                        <td>{patient.nationality}</td>
-                        <td>{patient.imported_local}</td>
-                        <td>{patient.public_healthcare_institution}</td>
-                        <td>{patient.residing_location}</td>
+                        <th scope="row">Case {patient.case_id}</th>
+                        <td onClick= {() => handleOnClick(patient.case_id)}>{patient.age}</td>
+                        <td onClick= {() => handleOnClick(patient.case_id)}>{patient.nationality}</td>
+                        <td onClick= {() => handleOnClick(patient.case_id)}>{patient.imported_local}</td>
+                        <td onClick= {() => handleOnClick(patient.case_id)}>{patient.public_healthcare_institution}</td>
+                        <td onClick= {() => handleOnClick(patient.case_id)}>{patient.residing_location}</td>
                         <td><button onClick={() => handleDelete(patient.id)}>Remove</button></td>
                     </tr>
                 ))}

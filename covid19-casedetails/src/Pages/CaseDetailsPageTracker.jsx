@@ -1,29 +1,15 @@
 import { useParams, useNavigate, Link} from "react-router-dom"
-import { createData } from "../Services/createData";
 
-export default function CaseDetailsPage({covidData}){
+export default function CaseDetailsPageTracker({covidData}){
+
     const navigate = useNavigate()
     const { _id } = useParams()
     const patientDetails = covidData.find((patient) => patient._id === Number(_id))
     
-    const saveCases = {
-        case_id: patientDetails?._id,
-        age: patientDetails?.age,
-        nationality: patientDetails?.nationality,
-        imported_local: patientDetails?.imported_local,
-        public_healthcare_institution: patientDetails?.public_healthcare_institution,
-        residing_location: patientDetails?.residing_location
-    }
+    const handleBackToTracker = () => {navigate("/casetracker")}
     
-    const handleBackToList = () => {navigate("/list")}
-    
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        await createData(saveCases);
-      }
-
-      
-    if(!patientDetails) return <><h1>No matching ID</h1><button onClick={handleBackToList}>Back to List</button></>
+       
+    if(!patientDetails) return <><h1>No matching ID</h1><button onClick={handleBackToTracker}>Back to List</button></>
     
     return (<>
 
@@ -68,10 +54,7 @@ export default function CaseDetailsPage({covidData}){
             <dd></dd>
 
         </dl>
-        <button onClick={handleBackToList}>Back to List</button>
-        <button onClick={handleSubmit}>Save to tracker</button>
+        <button onClick={handleBackToTracker}>Back to Case Tracker</button>
     
     </>)
 }
-
-//need to find out why need to put question mark again. isit because of async issues ?
