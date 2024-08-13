@@ -1,15 +1,99 @@
 @import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap");
 
+/*=========================================================Css edits for NavBar.jsx===================================================*/
+
 #root {
     font-family: "Anek Devanagari", sans-serif;
-    font-size: large;
+    font-size: large; 
 }
 
 #navBarText{
     font-size: 38px;
+    padding: 0px 80px 0px 50px;
+    border-bottom: 2px solid;
+}
+
+.navBarUl{
+    margin: 0px 10px 0px 10px
 }
 
 dt {
     font-size: 20px;
     font-weight: bold;
+}
+
+/*=========================================================Css edits for HomePage.jsx===================================================*/
+.divCont {
+    position: relative;
+    height: 100vh;
+  }
+  
+.centered-homePageForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.homePageText{
+    margin-bottom: 10%;
+    font-size: 25px;
+}
+
+.homePageButton{
+    transition:2s;
+}
+
+.homePageButton:hover{
+    background-color: rgb(32, 32, 32);
+}
+
+.homePageInput{
+    font-size: 30px;
+    text-align: center;   
+}
+
+/*=========================================================Css edits for MainPage.jsx===================================================*/
+.divMainPage{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    padding: 0 80px;
+}
+  
+.leftMainPage:hover {
+    transition: transform 0.5s ease;
+    transform: translateX(-28px); 
+    
+}
+
+.rightMainPage:hover{
+    transition: transform 0.5s ease;
+    transform: translateX(28px);
+}
+
+/*=========================================================Css edits for ListPage.jsx===================================================*/
+th {
+    text-align: center;
+}
+
+table{
+    border-top: 1px solid; 
+}
+
+/* #listTableRow{
+     transition: 0.3s ease;
+}
+
+#listTableRow:hover{
+    background-color: rgb(233, 230, 230);
+} */
+
+.listPageBut{
+    width: 120px;
+    height: 50px;
+    font-size: 17px;
+    margin-bottom: 20px;
+    
 }

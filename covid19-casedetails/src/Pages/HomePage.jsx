@@ -13,22 +13,24 @@ export default function HomePage({name, setName}){
 
 
 
-    return (<>
+    return (
         
-       
-        <form id = "homePageForm" onSubmit = {handleSubmit}>
-           <label htmlFor = "username">Welcome to the Covid-19 Database, please enter your name</label>
-           <input
-           id = "username"
-           name = "username"
-           value = {name} 
-           onChange = {handleChange}
-           />
-           <button type = "submit">Enter</button>
-        </form>
+
+        <div className="divCont">
+            <form className="centered-homePageForm" onSubmit={handleSubmit}>
+                <label className = "homePageText" htmlFor="username">Welcome to the Covid-19 Database, please enter your name</label>
+                <input
+                    className= "homePageInput"
+                    id="username"
+                    name="username"
+                    value={name}
+                    onChange={handleChange}
+                />
+                <button className= "homePageButton" type="submit">Enter</button>
+            </form>
+        </div>
     
-    
-    </>)
+    )
 }
 
 //url changes when hit enter, stops after handlesubmit

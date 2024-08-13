@@ -5,13 +5,14 @@ export default function MainPage(){
     
     
     return (<>
-    
+    <div className = "divMainPage">
     <NavLink to = "/list">
-    <h2>List of Patients</h2>
+    <h2 className = "leftMainPage">List of Patients</h2>
     </NavLink>
     <NavLink to = "/dataanalysis">
-    <h2>Data Analysis</h2>
+    <h2 className = "rightMainPage">Data Analysis</h2>
     </NavLink>
+    </div>
     
      
     </>)
