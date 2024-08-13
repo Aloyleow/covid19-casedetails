@@ -12,16 +12,18 @@ export default function NavBarContents({name}){
     
 
     return (<>
-
-       <h1>{nameEmpty()}</h1>
-       <NavLink to = "/main">Main</NavLink>
-       <br></br>
-       <NavLink to = "/list">List</NavLink>
-       <br></br>
-       <NavLink to = "/dataanalysis">Data Analysis</NavLink>
-       <br></br>
-       <NavLink to = "/casetracker">Case Tracker</NavLink>
-    
+      <nav id = "navBarText">
+        <ul>
+          <li><strong>{nameEmpty()}</strong></li>
+        </ul>
+        <ul>
+          <li><a href="#"><NavLink to = "/main">Main</NavLink></a></li>
+          <li><a href="#"><NavLink to = "/list">List</NavLink></a></li>
+          <li><a href="#"><NavLink to = "/dataanalysis">Data Analysis</NavLink></a></li>
+          <li><a href="#"><NavLink to = "/main">Case Tracker</NavLink></a></li>
+        </ul>
+      </nav>
+       
     
     </>)
 }

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import './HomePage.css'
+
 
 export default function HomePage({name, setName}){
 
@@ -13,7 +13,7 @@ export default function HomePage({name, setName}){
 
 
 
-    return (<div>
+    return (<>
         
        
         <form id = "homePageForm" onSubmit = {handleSubmit}>
@@ -28,7 +28,7 @@ export default function HomePage({name, setName}){
         </form>
     
     
-    </div>)
+    </>)
 }
 
 //url changes when hit enter, stops after handlesubmit
