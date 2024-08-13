@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-// import './App.css'
+import './App.css'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import ListPage from './Pages/ListPage'
 import HomePage from './Pages/HomePage'
@@ -26,8 +26,7 @@ function App() {
     };
     loadCovidData();
   }, [])
-
-  
+ 
   // const navBarContents = () =>
 
   return (

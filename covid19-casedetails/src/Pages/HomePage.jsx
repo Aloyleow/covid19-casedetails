@@ -13,10 +13,10 @@ export default function HomePage({name, setName}){
 
 
 
-    return (<>
+    return (<div>
         
        
-        <form className = "homePageForm" onSubmit = {handleSubmit}>
+        <form id = "homePageForm" onSubmit = {handleSubmit}>
            <label htmlFor = "username">Welcome to the Covid-19 Database, please enter your name</label>
            <input
            id = "username"
@@ -28,7 +28,7 @@ export default function HomePage({name, setName}){
         </form>
     
     
-    </>)
+    </div>)
 }
 
 //url changes when hit enter, stops after handlesubmit
