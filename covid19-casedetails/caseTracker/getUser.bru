@@ -1,0 +1,21 @@
+meta {
+  name: getUser
+  type: http
+  seq: 6
+}
+
+post {
+  url: https://api.airtable.com/v0/app7NmtJ4XeCH21hm/Table%201
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer pat3pwH3GM4RAOLSh.a660c14f13712fd4f0d74fce6a2049cfc53719fe6bd83ff3e04199cf945c86c5
+}
+
+body:json {
+  {"fields": {
+    "name": "jon"
+  }}
+}

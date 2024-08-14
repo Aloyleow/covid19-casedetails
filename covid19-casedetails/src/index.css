@@ -208,13 +208,14 @@ h3{
 .divCaseTracker{
     display: flex;
     justify-content: space-around;
+    height: 80px
 }
 
 .butCaseDetailsTracker{
     height: 58px;
 }
 
-.footerPage{
+/* .footerPage{
     border-top: 1px solid;
     height: 40px;
     
@@ -227,4 +228,4 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */

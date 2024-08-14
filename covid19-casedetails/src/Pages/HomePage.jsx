@@ -1,15 +1,26 @@
 import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
+import { createUsers } from "../Services/createUsers"
+import { useState } from "react"
 
+export default function HomePage(){
 
-export default function HomePage({name, setName}){
+    const [user, setUser] = useState([])
+    
 
     const navigate = useNavigate()
 
-    const handleChange = (event) => {setName(event.target.value)}
-    const handleSubmit = (event) => {
+    const handleChange = (event) => {setUser(event.target.value)}
+    const handleSubmit = async (event) => {
         event.preventDefault()
+        await createUsers({name: user})
         navigate("/main")
+        if (user[0] === undefined){
+            navigate("/");
+            // console.log("error")
+        }
+       
+        // console.log(name[0])
     }
 
 
@@ -29,7 +40,7 @@ export default function HomePage({name, setName}){
                     className= "homePageInput"
                     id="username"
                     name="username"
-                    value={name}
+                    value={user}
                     onChange={handleChange}
                 />
                 <button className= "homePageButton" type="submit">Enter</button>
