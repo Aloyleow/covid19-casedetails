@@ -4,10 +4,15 @@ meta {
   seq: 6
 }
 
-post {
-  url: https://api.airtable.com/v0/app7NmtJ4XeCH21hm/Table%201
+get {
+  url: https://api.airtable.com/v0/app7NmtJ4XeCH21hm/Table%201?maxRecords=20&view=Grid%20view
   body: json
   auth: none
+}
+
+params:query {
+  maxRecords: 20
+  view: Grid%20view
 }
 
 headers {
