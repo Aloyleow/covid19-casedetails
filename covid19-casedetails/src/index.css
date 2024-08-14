@@ -76,19 +76,28 @@ dt {
 /*=========================================================Css edits for ListPage.jsx===================================================*/
 th {
     text-align: center;
+    border: 1px groove;
+}
+
+td {
+
+    border: 1px groove;
+
 }
 
 table{
     border-top: 1px solid; 
+    font-weight: lighter;
+    border-collapse: collapse;
 }
 
-/* #listTableRow{
+.listTableRow{
      transition: 0.3s ease;
 }
 
-#listTableRow:hover{
-    background-color: rgb(233, 230, 230);
-} */
+.listTableRow:hover{
+    background-color: rgb(168, 168, 168);
+}
 
 .listPageBut{
     width: 120px;
@@ -96,6 +105,31 @@ table{
     font-size: 17px;
     margin-bottom: 20px;
     
+}
+
+.listPageHeader {
+    border-bottom: 1px solid;
+    height: 80px;
+    position: sticky;
+    top: 0px; 
+     
+}
+
+/*=========================================================Css edits for CaseDetailsPage.jsx===================================================*/
+
+.articleCaseDetails{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.divCaseDetails{
+    display: flex;
+    justify-content: space-around;
+}
+
+.butCaseDetails{
+    height: 58px;
 }
 
 /*=========================================================Css edits for DataAnalysis.jsx===================================================*/
@@ -127,4 +161,53 @@ h3{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/*=========================================================Css edits for ageGroupCount.jsx===================================================*/
+.ageGroup{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*=========================================================Css edits for healthCareInstituteCount.jsx===================================================*/
+.hospitalCount{
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*=========================================================Css edits for ImportedLocalCount.jsx===================================================*/
+.importedLocalPage{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*=========================================================Css edits for NationalityCount.jsx===================================================*/
+.nationalityPage{
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*=========================================================Css edits for CaseTrackerPage.jsx===================================================*/
+.butCaseTracker{
+    display: flex;
+    justify-content: center;
+}
+
+/*=========================================================Css edits for CaseTrackerDetailsPage.jsx===================================================*/
+.articleTrackerPage{
+    display: flex;
+    justify-content: center;
+}
+
+.divCaseTracker{
+    display: flex;
+    justify-content: space-around;
+}
+
+.butCaseDetailsTracker{
+    height: 58px;
 }

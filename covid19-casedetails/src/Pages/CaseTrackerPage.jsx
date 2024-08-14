@@ -71,7 +71,7 @@ export default function CaseTrackerPage(){
                         <td onClick= {() => handleOnClick(patient.case_id)}>{patient.imported_local}</td>
                         <td onClick= {() => handleOnClick(patient.case_id)}>{patient.public_healthcare_institution}</td>
                         <td onClick= {() => handleOnClick(patient.case_id)}>{patient.residing_location}</td>
-                        <td><button onClick={() => handleDelete(patient.id)}>Remove</button></td>
+                        <td className = "butCaseTracker"><button onClick={() => handleDelete(patient.id)}>Remove</button></td>
                     </tr>
                 ))}
             </tbody>

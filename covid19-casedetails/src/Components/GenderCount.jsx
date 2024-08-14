@@ -49,8 +49,5 @@ export default function GenderCount({covidData}){
         </ResponsiveContainer>
             
         </div>
-        
-        
-       
     </>)
 }

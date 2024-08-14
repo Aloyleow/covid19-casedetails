@@ -12,10 +12,9 @@ export default function CaseDetailsPageTracker({covidData}){
     if(!patientDetails) return <><h1>No matching ID</h1><button onClick={handleBackToTracker}>Back to List</button></>
     
     return (<>
-
-        <h1>{patientDetails?.case_id}</h1>
-
+        <article className = "articleTrackerPage">
         <dl>
+        <h3><u>{patientDetails?.case_id}</u></h3>
             <dt>Age</dt>
             <dd>{patientDetails?.age}</dd>
             <br></br>
@@ -54,7 +53,10 @@ export default function CaseDetailsPageTracker({covidData}){
             <dd></dd>
 
         </dl>
-        <button onClick={handleBackToTracker}>Back to Case Tracker</button>
+        </article>
+        <div className = "divCaseTracker">
+        <button className = "butCaseDetailsTracker" onClick={handleBackToTracker}>Back to Case Tracker</button>
+        </div>
     
     </>)
 }

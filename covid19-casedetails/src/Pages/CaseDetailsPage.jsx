@@ -26,9 +26,10 @@ export default function CaseDetailsPage({covidData}){
     if(!patientDetails) return <><h1>No matching ID</h1><button onClick={handleBackToList}>Back to List</button></>
     
     return (<>
-        <article>
-        <h6><u>{patientDetails?.case_id}</u></h6>
+        <article className = "articleCaseDetails">
+        
         <dl>
+        <h3><u>{patientDetails?.case_id}</u></h3>
             <dt>Age</dt>
             <dd>{patientDetails?.age}</dd>
             <br></br>
@@ -63,13 +64,15 @@ export default function CaseDetailsPage({covidData}){
             <dd>{patientDetails?.residing_location}</dd>
             <dd>{patientDetails?.residing_postal_code}</dd>
             <br></br>
-            <dt><Link to = {patientDetails?.reference_url} target = "_blank" class = "contrast">Reference URL</Link></dt>
-            <dd></dd>
+            <dt><Link to = {patientDetails?.reference_url} target = "_blank" className = "contrast">Reference URL</Link></dt>
+            <dd>Ensure link is always to </dd>
 
         </dl>
-        <button onClick={handleBackToList}>Back to List</button>
-        <button onClick={handleSubmit}>Save to tracker</button>
         </article>
+        <div className= "divCaseDetails">
+        <button className = "butCaseDetails" onClick={handleBackToList}>Back to List</button>
+        <button className = "butCaseDetails" onClick={handleSubmit}>Save to tracker</button>
+        </div>
     
     </>)
 }

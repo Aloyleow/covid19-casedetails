@@ -101,9 +101,9 @@ export default function ListPage({ covidData }) {
             <table className="listTable">
                 <caption>
                     <h1>List of Covid-19 Case Details</h1>
-                    <button className = "listPageBut"onClick={handleReset}>Reset List</button>
+                    <button className = "listPageBut" onClick={handleReset}>Reset List</button>
                 </caption>
-                <thead >
+                <thead className = "listPageHeader">
                     <tr>
                         <th scope="col" onClick={() => handleSort('case_id')}>
                             Case ID {sortConfig.key === 'case_id' && (sortConfig.direction === 'asc' ? '▲' : '▼')}
@@ -127,8 +127,8 @@ export default function ListPage({ covidData }) {
                 </thead>
                 <tbody>
                     {sortedData.map((patient) => (
-                        <tr id = "listTableRow" key={patient.case_id} onClick={() => handleOnClick(patient._id)}>
-                            <th scope="row">{patient.case_id}</th>
+                        <tr  key={patient.case_id} onClick={() => handleOnClick(patient._id)}>
+                            <th className = "listTableRow" scope="row">{patient.case_id}</th>
                             <td>{patient.age}</td>
                             <td>{patient.nationality}</td>
                             <td>{patient.imported_local}</td>

@@ -43,8 +43,8 @@ export default function HealthCareInstituteCount({covidData}){
     
     return(<>
 
-        <h2>Transmission method</h2>
-        <main>
+        <h3>Hospital Visited Count</h3>
+        <div className = "hospitalCount">
             <ResponsiveContainer width={"80%"} height={600}>
                 <BarChart data={hospitals}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -54,7 +54,7 @@ export default function HealthCareInstituteCount({covidData}){
                     <Bar dataKey="value" fill="#8884d8" />
                 </BarChart>
             </ResponsiveContainer>
-        </main>
+        </div>
     
     
     </>)

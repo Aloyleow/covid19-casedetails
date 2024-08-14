@@ -35,18 +35,18 @@ export default function NationalityCount({covidData}){
     },[covidData])
     
     return (<>
-
-        <main>
+        <h3>Nationality Count</h3>
+        <div className = "nationalityPage">
             <ResponsiveContainer width={"50%"} height={600}>
                 <BarChart data={nationalities}>
-                    <CartesianGrid strokeDasharray="3 3" />
+                    <CartesianGrid strokeDasharray="9 1" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
                     <Bar dataKey="value" fill="#8884d8" />
                 </BarChart>
             </ResponsiveContainer>
-        </main>
+        </div>
     
     
     
