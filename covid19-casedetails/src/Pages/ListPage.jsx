@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { motion } from "framer-motion"
 
 // export default function ListPage({ covidData }){
     
@@ -97,7 +98,12 @@ export default function ListPage({ covidData }) {
     }, [covidData, sortConfig]);
 
     return (
-        <>
+        <motion.div
+        initial = {{opacity: 0}}
+        animate = {{opacity: 1}}
+        exit = {{opacity: 0}}
+        transition = {{duration: 0.5}}
+        >
             <table className="listTable">
                 <caption>
                     <h1>List of Covid-19 Case Details</h1>
@@ -140,6 +146,6 @@ export default function ListPage({ covidData }) {
                 <tfoot>
                 </tfoot>
             </table>
-        </>
+        </motion.div>
     );
 }

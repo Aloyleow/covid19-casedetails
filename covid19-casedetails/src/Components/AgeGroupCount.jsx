@@ -48,7 +48,7 @@ export default function AgeGroupCount({covidData}){
     
     return (<>
 
-       <h3>Transmission method</h3>
+       <h3>Age Group Count</h3>
         <div className = "ageGroup">
             <ResponsiveContainer width={"60%"} height={500}>
                 <BarChart data={ageGroups}>

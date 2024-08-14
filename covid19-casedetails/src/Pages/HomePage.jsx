@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import { motion } from "framer-motion"
 
 
 export default function HomePage({name, setName}){
@@ -16,7 +17,12 @@ export default function HomePage({name, setName}){
     return (
         
 
-        <div className="divCont">
+        <motion.div 
+        initial = {{opacity: 0}}
+        animate = {{opacity: 1}}
+        exit = {{opacity: 0, y: -400}}
+        transition = {{duration: 1.2}}
+        className="divCont">
             <form className="centered-homePageForm" onSubmit={handleSubmit}>
                 <label className = "homePageText" htmlFor="username">Welcome to the Covid-19 Database, please enter your name</label>
                 <input
@@ -28,7 +34,7 @@ export default function HomePage({name, setName}){
                 />
                 <button className= "homePageButton" type="submit">Enter</button>
             </form>
-        </div>
+        </motion.div>
     
     )
 }
