@@ -20,7 +20,7 @@ export default function NavBarContents({name}){
           <li className = "navBarUl"><a href="#"><NavLink to = "/main">Main</NavLink></a></li>
           <li className = "navBarUl"><a href="#"><NavLink to = "/list">List</NavLink></a></li>
           <li className = "navBarUl"><a href="#"><NavLink to = "/dataanalysis">Data Analysis</NavLink></a></li>
-          <li className = "navBarUl"><a href="#"><NavLink to = "/main">Case Tracker</NavLink></a></li>
+          <li className = "navBarUl"><a href="#"><NavLink to = "/casetracker">Case Tracker</NavLink></a></li>
         </ul>
       </nav>
        

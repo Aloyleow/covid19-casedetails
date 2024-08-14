@@ -13,21 +13,22 @@ export default function DataAnalysisPage({covidData}){
 
     return (<>
 
-        <h1>Analysis</h1>
-        <div>
-            <select value = {analysisSelected} onChange = {(event)=>handleChange(event)}>
+        <h1 className = "h1AnalysisPage">Analysis</h1>
+        <div className = "divdropDownBoxAnalysisPage">
+            <select className= "dropDownBoxAnalysisPage" value = {analysisSelected} onChange = {(event)=>handleChange(event)}>
                 <option>Gender Count</option>
                 <option>Age Group</option>
                 <option>Hospital Visited Count</option>
                 <option>Imported vs Local</option>
                 <option>Nationality Count</option>
-            </select>
+            </select>      
+        </div>
+        
             {analysisSelected === "Gender Count"?<GenderCount covidData = {covidData}/>:"" }
             {analysisSelected === "Imported vs Local"?<ImportedLocalCount covidData = {covidData} />:""}
             {analysisSelected === "Age Group"?<AgeGroupCount covidData = {covidData}/>:"" }
             {analysisSelected === "Hospital Visited Count"?<HealthCareInstituteCount covidData = {covidData}/>:"" }
             {analysisSelected === "Nationality Count"?<NationalityCount covidData = {covidData} />:""}
-        </div>
-    
+        
     </>)
 }

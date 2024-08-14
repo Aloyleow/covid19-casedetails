@@ -1,5 +1,5 @@
 
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts"
 import { useEffect, useState } from "react"
 
 
@@ -48,8 +48,8 @@ export default function AgeGroupCount({covidData}){
     
     return (<>
 
-       <h2>Transmission method</h2>
-        <main>
+       <h3>Transmission method</h3>
+        <div className = "ageGroup">
             <ResponsiveContainer width={"60%"} height={300}>
                 <BarChart data={ageGroups}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -57,9 +57,10 @@ export default function AgeGroupCount({covidData}){
                     <YAxis />
                     <Tooltip />
                     <Bar dataKey="value" fill="#8884d8" />
-                </BarChart>
+   
+                </BarChart>          
             </ResponsiveContainer>
-        </main>
+        </div>
         
        
     </>)

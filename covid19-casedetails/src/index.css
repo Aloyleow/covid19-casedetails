@@ -97,3 +97,34 @@ table{
     margin-bottom: 20px;
     
 }
+
+/*=========================================================Css edits for DataAnalysis.jsx===================================================*/
+
+.h1AnalysisPage{
+    text-align: center;
+}
+
+.divdropDownBoxAnalysisPage{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+.dropDownBoxAnalysisPage{
+    text-align: center;
+    align-items: center;
+    width: 50%
+}
+
+/*=========================================================Css edits for genderCount.jsx===================================================*/
+
+h3{
+    text-align: center;
+}
+
+.cardGender{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

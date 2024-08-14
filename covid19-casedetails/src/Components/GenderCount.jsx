@@ -1,10 +1,11 @@
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
+import { Legend, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
 import { useEffect, useState } from "react"
 
 
 export default function GenderCount({covidData}){
 
-    const [gender, setGender] = useState()
+    const [gender, setGender] = useState([]);
+    const COLORS = ["#0066b2", "#FFC0CB"];
     
     useEffect(() => {
         let x = 0
@@ -24,18 +25,31 @@ export default function GenderCount({covidData}){
     
     return (<>
 
-       <h2>gender</h2>
-        <main>
-            <ResponsiveContainer width={"20%"} height={300}>
-                <BarChart data={gender}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Bar dataKey="value" fill="#8884d8" />
-                </BarChart>
-            </ResponsiveContainer>
-        </main>
+        <h3>Gender Count</h3>
+        
+        <div className="cardGender">     
+        <ResponsiveContainer width={"40%"} height={500}>
+        <PieChart>
+          <Pie
+            data={gender}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"  /* Center X position of the PieChart */
+            cy="50%"  /* Center Y position of the PieChart */
+            outerRadius={200} /* Size of the pie chart */
+            fill="#8884d8"
+            >
+            {gender.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}    
+            </Pie>
+          <Tooltip />
+          <Legend/>
+        </PieChart>
+        </ResponsiveContainer>
+            
+        </div>
+        
         
        
     </>)
