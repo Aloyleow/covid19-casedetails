@@ -30,8 +30,8 @@ export default function CaseDetailsPage({covidData}){
         <motion.div
         initial={{ opacity: 0, x: 100}}
         animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0 }}
-        transition= {{duration: 0.5}}
+        exit={{ opacity: 1 }}
+        transition= {{duration: 0.8}}
         >
             <article className="articleCaseDetails">
                 <dl>
@@ -71,7 +71,7 @@ export default function CaseDetailsPage({covidData}){
                     <dd>{patientDetails?.residing_postal_code}</dd>
                     <br></br>
                     <dt><Link to={patientDetails?.reference_url} target="_blank" className="contrast">Reference URL</Link></dt>
-                    <dd>Ensure link is always to </dd>
+                    <dd>Ensure link is always to moh.gov.sg</dd>
                 </dl>
             </article>
             <div className="divCaseDetails">

@@ -1,11 +1,13 @@
+
 export async function getTrackData() {
+    const key = import.meta.env.VITE_API_KEY_trackData;
     const url = "https://api.airtable.com/v0/appl07cKSlVT5aGI4/Table%201?maxRecords=77&view=Grid%20view";
     try {
       const response = await fetch(url, {
         headers: {
           "Content-Type": "application/json",
           Authorization:
-            "Bearer pat2UuA0NYZBqUWxm.563541c4ccdb50f1705cae0506558cd625ff60f690a37fafadcdd1a317800b24",
+            `Bearer ${key}`,
         },
       });
       if (!response.ok) {
