@@ -19,6 +19,7 @@ function App() {
   const location = useLocation()
   const showNavBar = location.pathname !== "/"
 
+
   useEffect(() => {
     const loadCovidData = async () => {
       const data = await getData();
@@ -41,7 +42,7 @@ function App() {
         <Route path = "/casedetails/:_id" element = {<CaseDetailsPage covidData = {covidData}/>}/>
         <Route path = "/casetracker" element = {<CaseTrackerPage/>}/>
         <Route path = "/casetracker/casedetails/:_id" element = {<CaseDetailsPageTracker covidData = {covidData}/>}/>
-      </Routes>        
+      </Routes>
     </>
   )
 }

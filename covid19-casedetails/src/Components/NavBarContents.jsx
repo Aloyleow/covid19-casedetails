@@ -12,7 +12,7 @@ export default function NavBarContents({name}){
     
 
     return (<>
-      <nav id = "navBarText">
+      <nav id = "navBar">
         <ul>
           <li><strong>{nameEmpty()}</strong></li>
         </ul>

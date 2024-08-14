@@ -5,6 +5,7 @@ export default function MainPage(){
     
     
     return (<>
+    
     <div className = "divMainPage">
     <NavLink to = "/list">
     <h2 className = "leftMainPage">List of Patients</h2>
@@ -13,6 +14,7 @@ export default function MainPage(){
     <h2 className = "rightMainPage">Data Analysis</h2>
     </NavLink>
     </div>
+    
     
      
     </>)

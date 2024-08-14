@@ -7,10 +7,11 @@
     font-size: large; 
 }
 
-#navBarText{
+#navBar{
     font-size: 38px;
     padding: 0px 80px 0px 50px;
     border-bottom: 2px solid;
+    
 }
 
 .navBarUl{
@@ -126,6 +127,7 @@ table{
 .divCaseDetails{
     display: flex;
     justify-content: space-around;
+    height: 80px
 }
 
 .butCaseDetails{
@@ -210,4 +212,19 @@ h3{
 
 .butCaseDetailsTracker{
     height: 58px;
+}
+
+.footerPage{
+    border-top: 1px solid;
+    height: 40px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
