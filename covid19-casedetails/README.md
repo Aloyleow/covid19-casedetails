@@ -1,10 +1,3 @@
-
-token
-pat2UuA0NYZBqUWxm.563541c4ccdb50f1705cae0506558cd625ff60f690a37fafadcdd1a317800b24
-
-logUsers
-pat3pwH3GM4RAOLSh.a660c14f13712fd4f0d74fce6a2049cfc53719fe6bd83ff3e04199cf945c86c5
-
 # Development of Covid-19 Data Analysis and Tracker  (V1.0.0)
 
 
@@ -48,6 +41,6 @@ After completing this application, i felt more acustomed to handle react, even m
 
 ### Future state of Covid-19 Data Analysis and Tracker
 
-- Implement current, live data API
-- Implement sorting function
-- Provide more Data Analysis with the ability to filter/customise analysis based on user's preferenc
+- Implement current, live data API for covid-19 or other outbreaks
+- Implement searching function on each header / create search bar
+- Provide more Data Analysis with the ability to filter/customise analysis based on user's prefrences
