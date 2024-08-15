@@ -2,11 +2,11 @@ import { useParams, useNavigate, Link} from "react-router-dom"
 import { createData } from "../Services/createData";
 import { motion } from "framer-motion";
 
-export default function CaseDetailsPage({covidData}){
+
+export default function CaseDetailsPage({covidData, showSaved, setShowSaved}){
     const navigate = useNavigate()
     const { _id } = useParams()
     const patientDetails = covidData.find((patient) => patient._id === Number(_id))
-
     const saveCases = {
         case_id: patientDetails?._id,
         age: patientDetails?.age,
@@ -21,10 +21,12 @@ export default function CaseDetailsPage({covidData}){
     const handleSubmit = async (event) => {
         event.preventDefault();
         await createData(saveCases);
-          
+        setShowSaved("_tracked")    
     }
     
     if(!patientDetails) return <><h1>No matching ID</h1><button onClick={handleBackToList}>Back to List</button></>
+
+    
     
     return (<>
         <motion.div
@@ -35,7 +37,7 @@ export default function CaseDetailsPage({covidData}){
         >
             <article className="articleCaseDetails">
                 <dl>
-                    <h3><u>{patientDetails?.case_id}</u></h3>
+                    <h3><u>{patientDetails?.case_id}{showSaved}</u></h3>
                     <dt>Age</dt>
                     <dd>{patientDetails?.age}</dd>
                     <br></br>

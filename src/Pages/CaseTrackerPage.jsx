@@ -3,23 +3,26 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 
-export default function CaseTrackerPage(){
-
+export default function CaseTrackerPage({setShowSaved}){
+    const [loading, setLoading] = useState(true)
     const [trackedCase, setTrackedCase] = useState([])
-
+   
     useEffect(() => {
-
+        
         const loadCase = async () => {
             const data = await getTrackData()
             setTrackedCase(data)
+            setLoading(false)
         }
-
 
         loadCase()
 
-    }, [])
+    }, [loading])
+
+    
 
     const handleDelete = async (caseId) => {
+        
         const key = import.meta.env.VITE_API_KEY_trackData;
         const url = `https://api.airtable.com/v0/appl07cKSlVT5aGI4/Table%201?records[]=${caseId}`;
         try {
@@ -37,9 +40,12 @@ export default function CaseTrackerPage(){
             // const json = await response.json();
             
             setTrackedCase(trackedCase.filter((profile) => profile.id !== caseId))
+            
         } catch (error) {
             console.error(error.message);
         }
+        setShowSaved("")
+        
     }
 
     const navigate = useNavigate()
@@ -54,7 +60,10 @@ export default function CaseTrackerPage(){
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         >
-            <table>
+             {loading ? (
+                <progress className="progress" max="100">Loading...</progress>
+                ) :
+            (<table>
                 <caption>
                     <h1>Tracked Covid-19 Case Details</h1>
                 </caption>
@@ -68,6 +77,7 @@ export default function CaseTrackerPage(){
                         <th scope="col">Patient Residing Location</th>
                     </tr>
                 </thead>
+               
                 <tbody>
                     {trackedCase.map((patient) => (
                         <tr key={patient.id}>
@@ -83,7 +93,7 @@ export default function CaseTrackerPage(){
                 </tbody>
                 <tfoot>
                 </tfoot>
-            </table>
+            </table>)}
         </motion.div>
 
 
