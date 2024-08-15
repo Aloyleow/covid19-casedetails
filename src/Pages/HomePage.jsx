@@ -23,8 +23,6 @@ export default function HomePage(){
         // console.log(name[0])
     }
 
-
-
     return (
         
 
